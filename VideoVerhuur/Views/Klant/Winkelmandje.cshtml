@@ -1,0 +1,28 @@
+﻿@model List<Films>
+
+<h2>Winkelmandje</h2>
+
+@if (!Model.Any())
+{
+    <p>Je winkelmandje is leeg.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Prijs</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var film in Model)
+            {
+                <tr>
+                    <td>@film.Titel</td>
+                    <td>€@film.Prijs</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

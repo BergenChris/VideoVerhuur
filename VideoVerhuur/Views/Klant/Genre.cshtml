@@ -26,7 +26,7 @@
                             <td>
                         @if (film.InVoorraad != 0)
                         {
-                                    <a asp-controller="Home" asp-action="Rent" asp-route-filmId="@film.FilmId" class="btn btn-outline-primary btn-sm">
+                                    <a asp-controller="Klant" asp-action="Rent" asp-route-filmId="@film.FilmId" class="btn btn-outline-primary btn-sm">
                 Huren
             </a>
                         }

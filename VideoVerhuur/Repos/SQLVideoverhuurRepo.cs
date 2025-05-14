@@ -43,5 +43,10 @@ namespace VideoVerhuur.Repos
             return context.Films.Where(x => x.GenreId == genreId).ToList() ;
         }
 
+
+        public IEnumerable<Films> FilmsById(List<int> ids)
+        {
+            return context.Films.Where(x => ids.Contains(x.FilmId)).ToList();
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace VideoVerhuur.Repos
 
         IEnumerable<Films> FilmsByGenre(int id);
 
+        public IEnumerable<Films> FilmsById(List<int> ids);
+
 
     }
 }

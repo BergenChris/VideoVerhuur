@@ -1,8 +1,8 @@
-﻿@model VideoVerhuur.Models.Winkelmandje
+﻿@model List<Films>
 
 <h2>Je winkelmandje</h2>
 
-@if (!Model.FilmsInMandje.Any())
+@if (!Model.Any())
 {
     <p>Je hebt nog geen films geselecteerd.</p>
 }
@@ -18,7 +18,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var film in Model.FilmsInMandje)
+            @foreach (var film in Model)
             {
                 <tr>
                     <td>@film.Titel</td>

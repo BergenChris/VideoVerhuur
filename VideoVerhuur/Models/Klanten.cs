@@ -29,7 +29,7 @@ namespace VideoVerhuur.Models
 
 		public int Lidgeld { get; set; }
 
-		public Winkelmandje? mandje { get; set; } = new();
+
 
 
 	}
