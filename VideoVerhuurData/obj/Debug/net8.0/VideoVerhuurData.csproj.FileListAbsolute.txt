@@ -1,0 +1,12 @@
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\VideoVerhuurData.csproj.AssemblyReference.cache
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\VideoVerhuurData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\VideoVerhuurData.AssemblyInfoInputs.cache
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\VideoVerhuurData.AssemblyInfo.cs
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\VideoVerhuurData.csproj.CoreCompileInputs.cache
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\bin\Debug\net8.0\VideoVerhuurData.deps.json
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\bin\Debug\net8.0\VideoVerhuurData.dll
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\bin\Debug\net8.0\VideoVerhuurData.pdb
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\VideoVerhuurData.dll
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\refint\VideoVerhuurData.dll
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\VideoVerhuurData.pdb
+C:\Users\berge\source\repos\VideoVerhuur\VideoVerhuurData\obj\Debug\net8.0\ref\VideoVerhuurData.dll

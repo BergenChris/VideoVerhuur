@@ -1,0 +1,42 @@
+﻿@model IEnumerable<VideoVerhuur.Models.Films>
+@{
+    ViewData["Title"] = "Films per Genre";
+}
+
+<@if (Model != null && Model.Any())
+{
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Titel</th>
+                    <th>Prijs</th>
+                    <th>In Voorraad</th>
+   
+                    <th>Acties</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var film in Model)
+            {
+                        <tr>
+                            <td>@film.Titel</td>
+                            <td>@film.Prijs.ToString("C2").Substring(1)</td> 
+                            <td>@film.InVoorraad</td>
+                          
+                            <td>
+                        @if (film.InVoorraad != 0)
+                        {
+                                    <a asp-controller="Home" asp-action="Rent" asp-route-filmId="@film.FilmId" class="btn btn-outline-primary btn-sm">
+                Huren
+            </a>
+                        }
+                    </td>
+                        </tr>
+            }
+            </tbody>
+        </table>
+}
+else
+{
+        <p>Er zijn geen films beschikbaar voor dit genre.</p>
+}

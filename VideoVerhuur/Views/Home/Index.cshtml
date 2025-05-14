@@ -1,0 +1,23 @@
+﻿@model Klanten
+@{
+    ViewData["Title"] = "Home Page";
+}
+<img src="~/../images/videoVerhuur.jpg" alt="Logo" width="200" />
+<h2>Welkom! Meld je aan, om te kunnen huren</h2>
+<form asp-action="Inloggen" method="post">
+    <div>
+        <label asp-for="Naam"></label>
+        <input asp-for="Naam" />
+        <span asp-validation-for="Naam" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="PostCode"></label>
+        <input asp-for="PostCode" />
+        <span asp-validation-for="PostCode" class="text-danger"></span>
+    </div>
+
+    <input type="submit" value="Aanmelden" />
+</form>
+
+

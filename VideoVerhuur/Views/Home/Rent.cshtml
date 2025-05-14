@@ -1,0 +1,36 @@
+﻿@model VideoVerhuur.Models.Winkelmandje
+
+<h2>Je winkelmandje</h2>
+
+@if (!Model.FilmsInMandje.Any())
+{
+    <p>Je hebt nog geen films geselecteerd.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Huurprijs</th>
+                <th>In voorraad</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var film in Model.FilmsInMandje)
+            {
+                <tr>
+                    <td>@film.Titel</td>
+                    <td>@film.Prijs.ToString("C2")</td>
+                    <td>@film.InVoorraad</td>
+                    <td>
+                        <a asp-action="VerwijderUitMandje" asp-route-filmId="@film.FilmId" class="btn btn-danger btn-sm">Verwijder</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-action="Afrekenen" class="btn btn-success">Afrekenen</a>
+}
