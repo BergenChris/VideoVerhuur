@@ -6,7 +6,7 @@
     ViewData["Title"] = "Welkom";
     var genres = ViewBag.Genres as IEnumerable<VideoVerhuur.Models.Genres>;
 }
-<img src="~/images/videoVerhuur.jpg" alt="Logo" width="200" />
+<img src="~/Images/videoVerhuur.jpg" alt="Logo" width="200" />
 <h2>Welkom, @Model.Naam!</h2>
 
 <h3>Kies een genre</h3>
@@ -16,13 +16,12 @@
         @foreach (var genre in genres)
         {
             <li style="list-style-type: none;">
-                <a asp-controller="Klant" asp-action="Genre" asp-route-genreId="@genre.GenreId" class="btn btn-outline-primary">
-                @genre.GenreNaam
-            </a>
+                <form asp-controller="Klant" asp-action="Index" method="post" class="d-inline">
+                    <button type="submit" name="genreId" value="@genre.GenreId" class="btn btn-outline-primary">
+                        @genre.GenreNaam
+                    </button>
+                </form>
             </li>
         }
     </ul>
 }
-
-<a asp-action="Index" class="btn btn-primary">Terug naar Home</a>
-

@@ -1,0 +1,18 @@
+﻿@model Films
+
+@{
+    ViewBag.Title = "Film Annuleren";
+}
+<img src="~/Images/videoVerhuur.jpg" alt="Logo" width="200" />
+<h2>Welkom, @ViewBag.Klant.Naam!</h2>
+<h2>Film Annuleren</h2>
+
+<div>
+    <h3>@Model.Titel verwijderen uit je winkelmandje</h3>
+</div>
+<form asp-controller="Klant" asp-action="DeleteRent" asp-route-filmId="@Model.FilmId" method="post">
+    <button type="submit" class="btn btn-success">Ja</button>
+</form>
+<form asp-controller="Klant" asp-action="Rent"  method="post">
+    <button type="submit" class="btn btn-success">Neen</button>
+</form>

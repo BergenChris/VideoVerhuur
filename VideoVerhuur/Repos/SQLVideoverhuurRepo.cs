@@ -1,4 +1,5 @@
-﻿using VideoVerhuur.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using VideoVerhuur.Data;
 using VideoVerhuur.Models;
 
 
@@ -47,6 +48,13 @@ namespace VideoVerhuur.Repos
         public IEnumerable<Films> FilmsById(List<int> ids)
         {
             return context.Films.Where(x => ids.Contains(x.FilmId)).ToList();
+        }
+
+        public void UpdateFilm(Films film)
+        {
+            context.Films.Update(film);
+            context.SaveChanges();
+         
         }
     }
 }

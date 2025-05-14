@@ -17,7 +17,7 @@ namespace VideoVerhuur.Migrations
                 {
                     FilmId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    titel = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Titel = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GenreId = table.Column<int>(type: "int", nullable: false),
                     InVoorraad = table.Column<int>(type: "int", nullable: false),
                     UitVoorraad = table.Column<int>(type: "int", nullable: false),
@@ -35,7 +35,7 @@ namespace VideoVerhuur.Migrations
                 {
                     GenreId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GenraNaam = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    GenreNaam = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,8 +50,9 @@ namespace VideoVerhuur.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Naam = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Voornaam = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    straat_Nr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Straat_Nr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PostCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gemeente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     KlantStat = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HuurAantal = table.Column<int>(type: "int", nullable: false),
                     DatumLid = table.Column<DateTime>(type: "datetime2", nullable: false),

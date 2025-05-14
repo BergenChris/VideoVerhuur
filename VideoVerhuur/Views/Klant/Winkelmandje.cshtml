@@ -1,4 +1,4 @@
-﻿@model List<Films>
+﻿@model IEnumerable<Films>
 
 <h2>Winkelmandje</h2>
 
@@ -8,11 +8,12 @@
 }
 else
 {
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Titel</th>
                 <th>Prijs</th>
+                <th>Acties</th>
             </tr>
         </thead>
         <tbody>
@@ -20,9 +21,32 @@ else
             {
                 <tr>
                     <td>@film.Titel</td>
-                    <td>€@film.Prijs</td>
+                    <td>€ @film.Prijs</td>
+                    <td>
+                        <form asp-controller="Klant" asp-action="DeleteRent" asp-route-filmId="@film.FilmId" method="post" style="display:inline;">
+                            <input type="hidden" name="filmId" value="@film.FilmId" />
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <img src="~/Images/delete.png" alt="Huren" width="30" height="30" style="border: none;" />
+                            </button>
+                        </form>
+                    </td>
                 </tr>
+
             }
         </tbody>
     </table>
 }
+
+
+
+<form asp-controller="Klant" asp-action="Genre" asp-route-genreId="@ViewBag.LaatsteGenreId" method="post" class="mt-2">
+    <button type="submit" class="btn btn-success">Verder Winkelen</button>
+</form>
+
+
+
+
+<a asp-controller="Klant" asp-action="Afrekenen" method="post" class="mt-2">
+    <button type="submit" class="btn btn-success">💳 Afrekenen</button>
+</a>
+

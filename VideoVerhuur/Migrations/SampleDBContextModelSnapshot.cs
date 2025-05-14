@@ -22,7 +22,7 @@ namespace VideoVerhuur.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VideoVerhuurVDAB.Models.Films", b =>
+            modelBuilder.Entity("VideoVerhuur.Models.Films", b =>
                 {
                     b.Property<int>("FilmId")
                         .ValueGeneratedOnAdd()
@@ -39,22 +39,22 @@ namespace VideoVerhuur.Migrations
                     b.Property<double>("Prijs")
                         .HasColumnType("float");
 
+                    b.Property<string>("Titel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("TotaalVerhuurd")
                         .HasColumnType("int");
 
                     b.Property<int>("UitVoorraad")
                         .HasColumnType("int");
 
-                    b.Property<string>("titel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("FilmId");
 
                     b.ToTable("Films");
                 });
 
-            modelBuilder.Entity("VideoVerhuurVDAB.Models.Genres", b =>
+            modelBuilder.Entity("VideoVerhuur.Models.Genres", b =>
                 {
                     b.Property<int>("GenreId")
                         .ValueGeneratedOnAdd()
@@ -71,7 +71,7 @@ namespace VideoVerhuur.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("VideoVerhuurVDAB.Models.Klanten", b =>
+            modelBuilder.Entity("VideoVerhuur.Models.Klanten", b =>
                 {
                     b.Property<int>("KlantId")
                         .ValueGeneratedOnAdd()
@@ -104,11 +104,11 @@ namespace VideoVerhuur.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Voornaam")
+                    b.Property<string>("Straat_Nr")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("straat_Nr")
+                    b.Property<string>("Voornaam")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -117,7 +117,7 @@ namespace VideoVerhuur.Migrations
                     b.ToTable("Klanten");
                 });
 
-            modelBuilder.Entity("VideoVerhuurVDAB.Models.Verhuringen", b =>
+            modelBuilder.Entity("VideoVerhuur.Models.Verhuringen", b =>
                 {
                     b.Property<int>("VerhuurId")
                         .ValueGeneratedOnAdd()

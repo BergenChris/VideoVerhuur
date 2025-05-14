@@ -2,8 +2,9 @@
 @{
     ViewData["Title"] = "Films per Genre";
 }
-
-<@if (Model != null && Model.Any())
+<img src="~/Images/videoVerhuur.jpg" alt="Logo" width="200" />
+<h2>Welkom, @ViewBag.Klant.Naam!</h2>
+@if (Model != null && Model.Any())
 {
         <table class="table table-striped">
             <thead>
@@ -26,17 +27,26 @@
                             <td>
                         @if (film.InVoorraad != 0)
                         {
-                                    <a asp-controller="Klant" asp-action="Rent" asp-route-filmId="@film.FilmId" class="btn btn-outline-primary btn-sm">
-                Huren
-            </a>
+                            <form asp-controller="Klant" asp-action="Winkelmandje" method="post" class="d-inline">
+                                <input type="hidden" name="filmId" value="@film.FilmId" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm">
+                                    <img src="~/Images/plus.png" alt="Huren" width="30" height="30" style="border: none;" />
+                                </button>
+                            </form>
+
                         }
                     </td>
                         </tr>
             }
             </tbody>
         </table>
+
+    <a asp-action="Index" asp-controller="Klant"  class="btn btn-secondary">
+         Terug naar genre
+    </a>
 }
 else
 {
         <p>Er zijn geen films beschikbaar voor dit genre.</p>
 }
+

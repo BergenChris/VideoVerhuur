@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Films>
+
+<h2>Afrekenen</h2>
+
+@if (!Model.Any())
+{
+    <p>Je winkelmandje is leeg.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Prijs</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                double totalPrice = 0; // Declare totalPrice as double
+            }
+            @foreach (var film in Model)
+            {
+                <tr>
+                    <td>@film.Titel</td>
+                    <td>€ @film.Prijs</td>
+                </tr>
+
+           
+                
+                    totalPrice += film.Prijs;
+                
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><strong>Totaal</strong></td>
+                <td><strong>€ @totalPrice</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+}
+
+@if (ViewBag.Klant != null)
+{
+    <div class="billing-info mt-4">
+        <h3>Facturatie</h3>
+        <p><strong>Naam:</strong> @ViewBag.Klant.Naam</p>
+        <p><strong>Straat:</strong> @ViewBag.Klant.Straat_Nr</p>
+        <p><strong>Postcode:</strong> @ViewBag.Klant.Gemeente</p>
+       
+    </div>
+}
+

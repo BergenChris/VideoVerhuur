@@ -1,36 +1,18 @@
-﻿@model List<Films>
+﻿@model Films
 
-<h2>Je winkelmandje</h2>
-
-@if (!Model.Any())
-{
-    <p>Je hebt nog geen films geselecteerd.</p>
+@{
+    ViewBag.Title = "Film Huren";
 }
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Titel</th>
-                <th>Huurprijs</th>
-                <th>In voorraad</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var film in Model)
-            {
-                <tr>
-                    <td>@film.Titel</td>
-                    <td>@film.Prijs.ToString("C2")</td>
-                    <td>@film.InVoorraad</td>
-                    <td>
-                        <a asp-action="VerwijderUitMandje" asp-route-filmId="@film.FilmId" class="btn btn-danger btn-sm">Verwijder</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<img src="~/Images/videoVerhuur.jpg" alt="Logo" width="200" />
+<h2>Welkom, @ViewBag.Klant.Naam!</h2>
+<h2>Film Huren</h2>
 
-    <a asp-action="Afrekenen" class="btn btn-success">Afrekenen</a>
-}
+<div>
+    <h3>@Model.Titel</h3>
+</div>
+<a href="javascript:window.location.replace(document.referrer);" class="btn btn-secondary">⟵ Vorige pagina</a>
+<form asp-controller="Klant" asp-action="Afrekenen" method="post">
+    <button type="submit" class="btn btn-success">💳 Afrekenen</button>
+</form>
+
+

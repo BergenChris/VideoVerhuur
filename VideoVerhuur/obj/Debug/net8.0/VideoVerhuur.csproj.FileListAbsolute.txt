@@ -329,9 +329,9 @@ C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\staticweba
 C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.VideoVerhuur.props
 C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.VideoVerhuur.props
 C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\scopedcss\bundle\VideoVerhuur.styles.css
-C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\scopedcss\projectbundle\VideoVerhuur.bundle.scp.css
 C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\VideoVer.A5BD15D4.Up2Date
 C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\VideoVerhuur.genruntimeconfig.cache
 C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\ref\VideoVerhuur.dll
+C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\berge\Desktop\VDABVideoVerhuur\VideoVerhuur\obj\Debug\net8.0\scopedcss\projectbundle\VideoVerhuur.bundle.scp.css

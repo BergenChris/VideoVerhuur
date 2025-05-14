@@ -15,7 +15,7 @@ namespace VideoVerhuur.Models
 
 		public string Voornaam { get; set; } = string.Empty;
 
-		public string straat_Nr { get; set; } = string.Empty;
+		public string Straat_Nr { get; set; } = string.Empty;
 
 		public string PostCode { get; set; } = string.Empty;
 

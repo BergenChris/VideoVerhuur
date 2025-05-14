@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\VideoVerhuur.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\berge\\Desktop\\VDABVideoVerhuur\\VideoVerhuur\\wwwroot\\Images\\delete.png",
+      "PackagePath": "staticwebassets\\Images\\delete.png"
+    },
+    {
+      "Id": "C:\\Users\\berge\\Desktop\\VDABVideoVerhuur\\VideoVerhuur\\wwwroot\\Images\\plus.png",
+      "PackagePath": "staticwebassets\\Images\\plus.png"
+    },
+    {
+      "Id": "C:\\Users\\berge\\Desktop\\VDABVideoVerhuur\\VideoVerhuur\\wwwroot\\Images\\videoVerhuur.jpg",
+      "PackagePath": "staticwebassets\\Images\\videoVerhuur.jpg"
+    },
+    {
       "Id": "C:\\Users\\berge\\Desktop\\VDABVideoVerhuur\\VideoVerhuur\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
