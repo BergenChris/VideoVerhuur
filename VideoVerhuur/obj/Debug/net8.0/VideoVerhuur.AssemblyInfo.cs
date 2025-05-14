@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VideoVerhuur")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb710829d9f66a2aca572ec06051082b405a8027")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f9e039f7babd7014a886ad376c855cf2b04983b")]
 [assembly: System.Reflection.AssemblyProductAttribute("VideoVerhuur")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VideoVerhuur")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
