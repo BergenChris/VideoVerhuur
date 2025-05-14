@@ -242,9 +242,37 @@ namespace VideoVerhuur.Controllers
 
             var productenInMandje = _service.FilmsById(filmIds);
 
+            foreach (var film in productenInMandje)
+            {
+                Verhuringen nieuweVerhuring =
+                    new Verhuringen
+                    {
+                        KlantId = _klant.KlantId,
+                        FilmId = film.FilmId,
+                        VerhuurDatum = DateTime.Today
+                    };
+                _service.Verhuur(nieuweVerhuring);
+            }
+
+
+
             return View("Afrekenen", productenInMandje);
 
         }
+
+
+        public IActionResult Logout()
+        {
+            // Wis de gebruikersspecifieke sessiegegevens
+            HttpContext.Session.Clear();
+
+            // Of wis de hele sessie:
+            // HttpContext.Session.Clear();
+
+            // Redirect naar de inlogpagina of een andere pagina
+            return Redirect("/");
+        }
+
 
 
     }

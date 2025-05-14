@@ -56,5 +56,11 @@ namespace VideoVerhuur.Repos
             context.SaveChanges();
          
         }
+
+        public void Verhuur(Verhuringen verhuring)
+        {
+            context.Verhuringen.Add(verhuring);
+            context.SaveChanges();
+        }
     }
 }

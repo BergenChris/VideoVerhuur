@@ -19,6 +19,6 @@ namespace VideoVerhuur.Repos
 
         public IEnumerable<Films> FilmsById(List<int> ids);
 
-
+        public void Verhuur(Verhuringen verhuring);
     }
 }
