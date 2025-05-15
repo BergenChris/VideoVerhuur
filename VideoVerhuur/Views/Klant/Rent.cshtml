@@ -3,8 +3,7 @@
 @{
     ViewBag.Title = "Film Huren";
 }
-<img src="~/Images/videoVerhuur.jpg" alt="Logo" width="200" />
-<h2>Welkom, @ViewBag.Klant.Naam!</h2>
+@await Component.InvokeAsync("WelkomsBericht")
 <h2>Film Huren</h2>
 
 <div>

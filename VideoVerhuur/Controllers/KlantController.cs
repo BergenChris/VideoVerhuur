@@ -76,7 +76,7 @@ namespace VideoVerhuur.Controllers
             // Als genreId niet bestaat in de session, kun je een standaard waarde instellen of NotFound teruggeven
             if (!genreId.HasValue)
             {
-                return NotFound();  // Of redirection naar een andere pagina, afhankelijk van je voorkeur
+                genreId = 1;
             }
 
             // Verkrijg films voor het genre
@@ -173,9 +173,51 @@ namespace VideoVerhuur.Controllers
             return RedirectToAction("Winkelmandje", new { filmId = (int?)null });
         }
 
+        [HttpGet]
+        public IActionResult DeleteRent(int filmId)
+        {
+            Klant();
+            ViewBag.Klant = _klant;
+
+            // Haal het winkelmandje op uit de session
+            var winkelmandjeJson = HttpContext.Session.GetString("Winkelmandje");
+
+
+            if (string.IsNullOrEmpty(winkelmandjeJson))
+            {
+                // Als het winkelmandje leeg is, redirect dan naar de index of winkelmand pagina
+                return RedirectToAction("Winkelmandje");
+            }
+
+            // Deserialize de lijst van filmIds
+            var filmIds = JsonSerializer.Deserialize<List<int>>(winkelmandjeJson);
+
+            var film = _service.GetFilm(filmId);
+            
+
+
+            // Als de lijst leeg is, kun je de session verwijderen
+            if (!filmIds.Any())
+            {
+                HttpContext.Session.Remove("Winkelmandje");
+            }
+            else
+            {
+                // Sla de bijgewerkte lijst terug in de session
+                var nieuweJson = JsonSerializer.Serialize(filmIds);
+                HttpContext.Session.SetString("Winkelmandje", nieuweJson);
+            }
+
+            // Redirect terug naar het winkelmandje om de wijziging te tonen
+
+
+
+
+            return View("DeleteRent",film);
+        }
 
         [HttpPost]
-        public IActionResult DeleteRent(int filmId)
+        public IActionResult DeleteRentExecute(int filmId)
         {
             Klant();
             ViewBag.Klant = _klant;
@@ -213,11 +255,10 @@ namespace VideoVerhuur.Controllers
             }
 
             // Redirect terug naar het winkelmandje om de wijziging te tonen
-            
 
+            var productenInMandje = _service.FilmsById(filmIds);
 
-
-            return View("DeleteRent", film);
+            return View("Winkelmandje", productenInMandje);
         }
 
         [HttpGet]

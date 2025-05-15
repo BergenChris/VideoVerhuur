@@ -43,7 +43,7 @@ namespace VideoVerhuur.Controllers
                 return RedirectToAction("Index", "Klant");
             }
 
-            ModelState.AddModelError("", "Klant niet gevonden.");
+            ModelState.AddModelError("", "Onbekende klant, probieer opnieuw");
             return View("Index", klant);
         }
 

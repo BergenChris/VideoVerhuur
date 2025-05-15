@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Films>
-
+@await Component.InvokeAsync("WelkomsBericht")
 <h2>Winkelmandje</h2>
 
 @if (!Model.Any())
@@ -23,7 +23,7 @@ else
                     <td>@film.Titel</td>
                     <td>€ @film.Prijs</td>
                     <td>
-                        <form asp-controller="Klant" asp-action="DeleteRent" asp-route-filmId="@film.FilmId" method="post" style="display:inline;">
+                        <form asp-controller="Klant" asp-action="DeleteRent" asp-route-filmId="@film.FilmId" method="get" style="display:inline;">
                             <input type="hidden" name="filmId" value="@film.FilmId" />
                             <button type="submit" class="btn btn-danger btn-sm">
                                 <img src="~/Images/delete.png" alt="Huren" width="30" height="30" style="border: none;" />
@@ -38,8 +38,11 @@ else
 }
 
 
+@{
+    var genreId = Context.Session.GetInt32("LaatsteGenreId");
+}
 
-<form asp-controller="Klant" asp-action="Genre" asp-route-genreId="@ViewBag.LaatsteGenreId" method="post" class="mt-2">
+<form asp-controller="Klant" asp-action="Genre" asp-route-genreId="@ViewBag.LaatsteGenreId" method="get" class="mt-2">
     <button type="submit" class="btn btn-success">Verder Winkelen</button>
 </form>
 

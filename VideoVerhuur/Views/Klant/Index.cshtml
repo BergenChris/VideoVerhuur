@@ -6,8 +6,7 @@
     ViewData["Title"] = "Welkom";
     var genres = ViewBag.Genres as IEnumerable<VideoVerhuur.Models.Genres>;
 }
-<img src="~/Images/videoVerhuur.jpg" alt="Logo" width="200" />
-<h2>Welkom, @Model.Naam!</h2>
+@await Component.InvokeAsync("WelkomsBericht")
 
 <h3>Kies een genre</h3>
 @if (genres != null && genres.Any())

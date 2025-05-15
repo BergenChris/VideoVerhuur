@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Films>
-
+@await Component.InvokeAsync("WelkomsBericht")
 <h2>Afrekenen</h2>
 
 @if (!Model.Any())

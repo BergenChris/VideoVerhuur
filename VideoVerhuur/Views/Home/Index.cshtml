@@ -17,6 +17,19 @@
         <span asp-validation-for="PostCode" class="text-danger"></span>
     </div>
 
+    @if (!ViewData.ModelState.IsValid)
+
+    {
+        <div style="color:red">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+    
+
     <input type="submit" value="Aanmelden" />
 </form>
 
