@@ -6,10 +6,13 @@ using VideoVerhuur.Models;
 using System.Text.Json;
 using VideoVerhuur.Repos;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using VideoVerhuur.Filters;
 
 namespace VideoVerhuur.Controllers
 {
-	public class KlantController : Controller
+    [KlantSessionAuthorize]
+    public class KlantController : Controller
 	{
         private readonly SQLVideoVerhuurRepo _service;
         private Klanten _klant;
