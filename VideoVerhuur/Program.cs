@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Identity.Client;
 using VideoVerhuur.Data;
 using VideoVerhuur.Models;
 using VideoVerhuur.Repos;
 using VideoVerhuur.Services;
+using VideoVerhuur.Data;
 
 namespace VideoVerhuur
 {
@@ -15,7 +18,10 @@ namespace VideoVerhuur
 			// Add services to the container.
 			builder.Services.AddDbContext<SampleDBContext>(options =>
 			options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-     
+            builder.Services.AddDbContext<ApplicationDBContext>(options =>
+				options.UseSqlServer(builder.Configuration.GetConnectionString("AutherizationConnection")));
+			builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+				options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDBContext>();
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<SQLVideoVerhuurRepo>();
@@ -37,8 +43,8 @@ namespace VideoVerhuur
             app.UseSession();
 
             app.UseRouting();
-
-			app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
 			app.MapControllerRoute(
 				name: "default",

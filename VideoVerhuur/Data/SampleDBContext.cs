@@ -15,7 +15,7 @@ namespace VideoVerhuur.Data
         public DbSet<Genres> Genres { get; set; }
 
         public SampleDBContext() { }
-        public SampleDBContext(DbContextOptions options) : base(options) { }
+        public SampleDBContext(DbContextOptions<SampleDBContext> options) : base(options) { }
 
 
     }
