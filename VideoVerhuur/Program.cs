@@ -18,10 +18,11 @@ namespace VideoVerhuur
 			// Add services to the container.
 			builder.Services.AddDbContext<SampleDBContext>(options =>
 			options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-            builder.Services.AddDbContext<ApplicationDBContext>(options =>
-				options.UseSqlServer(builder.Configuration.GetConnectionString("AutherizationConnection")));
-			builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
-				options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDBContext>();
+			// indien extra DB nodig
+			//builder.Services.AddDbContext<ApplicationDBContext>(options =>
+			//	options.UseSqlServer(builder.Configuration.GetConnectionString("AutherizationConnection")));
+			//builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+			//	options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDBContext>();
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<SQLVideoVerhuurRepo>();
